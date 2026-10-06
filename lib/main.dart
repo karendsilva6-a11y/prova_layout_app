@@ -63,23 +63,21 @@ class TelaDashboard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 12.0),
-                // EXERCICIO 04: SEM Expanded + texto longo = overflow
-                Container(
-                  padding: const EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    color: Colors.teal.shade50,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Column(
-                    children: const [
-                      Icon(Icons.place, size: 36, color: Colors.teal),
-                      SizedBox(height: 8),
-                      Text('18', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                      Text(
-                        'Este e um texto extremamente longo colocado de proposito para causar um erro de overflow na Row do Flutter',
-                        style: TextStyle(fontSize: 12, color: Colors.grey),
-                      ),
-                    ],
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.teal.shade50,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      children: const [
+                        Icon(Icons.place, size: 36, color: Colors.teal),
+                        SizedBox(height: 8),
+                        Text('18', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                        Text('Locais Visitados', style: TextStyle(fontSize: 12, color: Colors.grey)),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(width: 12.0),
@@ -144,6 +142,22 @@ class TelaDashboard extends StatelessWidget {
                     ),
                     child: const Text(
                       'Raro',
+                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                // EXERCICIO 05: segundo selo
+                Positioned(
+                  bottom: -8,
+                  left: -8,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'Confirmado',
                       style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
                     ),
                   ),
