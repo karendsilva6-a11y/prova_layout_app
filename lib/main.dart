@@ -36,7 +36,7 @@ class TelaDashboard extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center, // EXERCICIO 02
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
               'Resumo das Observacoes',
@@ -147,6 +147,31 @@ class TelaDashboard extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            // EXERCICIO 03: nova secao
+            const SizedBox(height: 24.0),
+            const Text(
+              'Ultimos Registros',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16.0),
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.teal.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Icon(Icons.list, size: 32, color: Colors.teal),
+                  const Text('Ver todos os registros'),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Abrir'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
