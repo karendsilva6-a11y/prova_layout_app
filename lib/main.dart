@@ -63,21 +63,23 @@ class TelaDashboard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 12.0),
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade50,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.place, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text('18', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                        Text('Locais Visitados', style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
+                // EXERCICIO 04: SEM Expanded + texto longo = overflow
+                Container(
+                  padding: const EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    color: Colors.teal.shade50,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Column(
+                    children: const [
+                      Icon(Icons.place, size: 36, color: Colors.teal),
+                      SizedBox(height: 8),
+                      Text('18', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                      Text(
+                        'Este e um texto extremamente longo colocado de proposito para causar um erro de overflow na Row do Flutter',
+                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(width: 12.0),
@@ -148,7 +150,6 @@ class TelaDashboard extends StatelessWidget {
                 ),
               ],
             ),
-            // EXERCICIO 03: nova secao
             const SizedBox(height: 24.0),
             const Text(
               'Ultimos Registros',
