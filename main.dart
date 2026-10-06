@@ -44,34 +44,38 @@ class TelaDashboard extends StatelessWidget {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16.0),
-            // EXERCICIO 07: usando o widget customizado
-            Row(
+            // EXERCICIO 08: GridView.count 2x2
+            GridView.count(
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisSpacing: 12.0,
+              mainAxisSpacing: 12.0,
+              childAspectRatio: 1.4,
               children: [
-                Expanded(
-                  child: BlocoEstatistica(
-                    icone: Icons.flutter_dash,
-                    valor: '124',
-                    legenda: 'Aves Vistas',
-                    cor: Colors.teal.shade100,
-                  ),
+                BlocoEstatistica(
+                  icone: Icons.flutter_dash,
+                  valor: '124',
+                  legenda: 'Aves Vistas',
+                  cor: Colors.teal.shade100,
                 ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: BlocoEstatistica(
-                    icone: Icons.place,
-                    valor: '18',
-                    legenda: 'Locais Visitados',
-                    cor: Colors.teal.shade50,
-                  ),
+                BlocoEstatistica(
+                  icone: Icons.place,
+                  valor: '18',
+                  legenda: 'Locais Visitados',
+                  cor: Colors.teal.shade50,
                 ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: BlocoEstatistica(
-                    icone: Icons.camera_alt,
-                    valor: '45',
-                    legenda: 'Fotos',
-                    cor: Colors.teal.shade100,
-                  ),
+                BlocoEstatistica(
+                  icone: Icons.camera_alt,
+                  valor: '45',
+                  legenda: 'Fotos',
+                  cor: Colors.teal.shade100,
+                ),
+                BlocoEstatistica(
+                  icone: Icons.calendar_today,
+                  valor: '7',
+                  legenda: 'Dias de Campo',
+                  cor: Colors.teal.shade50,
                 ),
               ],
             ),
